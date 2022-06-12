@@ -1,15 +1,23 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <Selfie @picture-taken="imageSrc = $event" />
+
+    <img :src="imageSrc" />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Selfie from './components/Selfie.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Selfie
+  },
+  data() {
+    return {
+      imageSrc: null
+    }
   }
 }
 </script>
